@@ -27,6 +27,24 @@ public class ASub {
 			}
 		}
 
+		HashMap<Integer, int[]> map = new HashMap <Integer, int[]>();
+
+		
+		for(int i = 1; i < y + 1; i++) {
+			for(int j = 1; j < x + 1; j++) {
+				int loc = (i * y) + j;
+				int[] neighbors = new int[4]; // up, down, left, right
+				neighbors[0] = matrix[i - 1][j];
+				neighbors[1] = matrix[i + 1][j];
+				neighbors[2] = matrix[i][j - 1];
+				neighbors[3] = matrix[i][j + 1];
+
+				map.put(loc, neighbors);
+			}
+		}
+		
+		
+
 		for(int i = 0; i < y + 2; i++) {
 			
 			for(int j = 0; j < x + 2; j++) {
